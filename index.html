@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f5">
+  <meta name="description" content="Um bloco de notas simples para suas ideias e listas.">
+  <title>Notas — Meu espaço pessoal</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <header class="app-header">
+	<h3>Macintosh Tocindoor</h3>
+        <h2>Blocparty<span>.</span></h2>
+        <span class="app-subtitle">Meu espaço pessoal</span>
+      </header>
+
+      <label class="search">
+        <span aria-hidden="true">⌕</span>
+        <input type="search" id="search" placeholder="Pesquisar notas" autocomplete="off">
+      </label>
+ <button id="newNote" class="primary-button">Nova Nota</button>
+          <button id="newList" class="secondary-button">Nova Lista</button>
+<div class="empty-actions">
+         
+
+      <div class="section-heading">
+        <span>Minhas anotações</span>
+        <span id="notesCount" class="count">0</span>
+      </div>
+      <div id="notesList" class="notes-list"></div>
+
+      <div class="mobile-create">
+        <button id="mobileCreate" aria-label="Criar anotação ou lista" aria-expanded="false">+</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon" aria-hidden="true">✎</div>
+        <h1>Suas ideias começam aqui.</h1>
+        <p>Crie uma anotação ou organize suas tarefas em uma lista.</p>
+        <div class="empty-actions">
+          <button id="newNote" class="primary-button">Nova anotação</button>
+          <button id="newList" class="secondary-button">Nova lista</button>
+        </div>
+      </div>
+
+      <section id="editor" class="editor hidden" aria-label="Editor de anotação">
+        <div class="editor-header">
+          <button id="backToNotes" class="back-btn" aria-label="Voltar para as anotações">‹</button>
+          <span id="noteType">ANOTAÇÃO</span>
+          <button id="deleteNote" class="delete-btn">Excluir</button>
+        </div>
+
+        <input type="text" id="noteTitle" placeholder="Título" maxlength="160" aria-label="Título da anotação">
+        <textarea id="noteContent" placeholder="Comece a escrever..." aria-label="Conteúdo da anotação"></textarea>
+
+        <div id="listEditor" class="hidden">
+          <div id="tasks" class="tasks"></div>
+          <button id="addTask" class="add-task">＋ Adicionar item</button>
+          <div id="taskProgress" class="task-progress"></div>
+        </div>
+
+        <div class="save-info"><span id="saveStatus" role="status">Salvo neste dispositivo</span></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="createMenu" class="create-menu hidden" aria-label="Opções de criação">
+    <button id="menuNote">✎ Nova anotação</button>
+    <button id="menuList">☑ Nova lista</button>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
